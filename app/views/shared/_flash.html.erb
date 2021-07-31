@@ -1,7 +1,19 @@
 <% if notice %>
-  <p class="bg-yellow-200 text-gray-600 text-lg py-4 px-6 my-8 rounded-lg"><%= notice %></p>
+  <div class="bg-green-200 text-gray-600 text-lg py-4 px-6 my-8 rounded-md flex justify-between" x-show="visible" x-data="{ visible: true }">
+    <%= notice %>
+
+    <button type="button" aria-label="Close" @click="visible = false">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
 <% end %>
 
 <% if alert %>
-  <p class="bg-red-400 text-gray-600 text-lg py-4 px-6 my-8 rounded-lg"><%= alert %></p>
+  <div class="bg-red-200 text-gray-600 text-lg py-4 px-6 my-8 rounded-md flex justify-between" x-show="visible" x-data="{ visible: true }">
+    <%= alert %>
+
+    <button type="button" aria-label="Close" @click="visible = false">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
